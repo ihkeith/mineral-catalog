@@ -1,6 +1,6 @@
 # Hank's Humongous Minerals
 
-A humorous django application dedicated to our favorite detective, Hank Schraeder.
+A humorous django application dedicated to our favorite detective, Hank Schrader.
 
 ## Application Overview
 
