@@ -1,0 +1,61 @@
+{% extends 'minerals/layout.html' %}
+
+{% load static from staticfiles %}
+
+{% block title %}{{ mineral.name }} | {{ block.super }}{% endblock %}
+{% block content %}
+
+<div class="grid-100 mineral__container">
+    <h1 class="mineral__name">{{ mineral.name }}</h1>
+    <div class="mineral__image-bg">
+        <img class="mineral__image" src="{% static 'images/'|add:mineral.image_filename %}" %}>
+        <p class="mineral__caption">{{ mineral.image_caption }}</p>
+    </div>
+    <div class="mineral__table-container">
+        <table class="mineral__table">
+            {% for name, value in mineral.attrs %}
+            {% if name == 'formula' %}
+            <tr>
+                <td class="mineral__category">{{ name|join:" "|title }}</td>
+                <td class="mineral_formula">{{ value|safe }}</td>
+            </tr>
+            {% elif value != '' %}
+            <tr>
+                <td class="mineral__category">{{ name|join:" "|title }}</td>
+                <td>{{ value|safe }}</td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            <!-- <tr>
+                <td class="mineral__category">Category</td>
+                <td>{{ mineral.category }}</td>
+            </tr>
+            <tr>
+                <td class="mineral__category">Formula</td>
+                <td class="mineral__formula">{{ mineral.formula|safe }}</td>
+            </tr>
+            <tr>
+                <td class="mineral__category">Strunz Classification</td>
+                <td>{{ mineral.strunz_classification}}</td>
+            </tr>
+            <tr>
+                <td class="mineral__category">Unit Cell</td>
+                <td>{{ mineral.unit_cell}}</td>
+            </tr>
+            <tr>
+                <td class="mineral__category">Color</td>
+                <td>{{ mineral.color }}</td>
+            </tr>
+            <tr>
+                <td class="mineral__category">Crystal Habit</td>
+                <td>{{ mineral.crystal_habit }}</td>
+            </tr>
+            <tr>
+                <td class="mineral__category">Mohs Scale Hardness</td>
+                <td>{{ mineral.mohs_scale_hardness }}</td>
+            </tr> -->
+        </table>
+    </div>
+</div>
+
+{% endblock %}

@@ -13,9 +13,18 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf.urls import url
 from django.contrib import admin
-from django.urls import path
+from django.urls import include, path
+
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
+from minerals import views
 
 urlpatterns = [
+    path('minerals/', include('minerals.urls')),
     path('admin/', admin.site.urls),
+    path('', views.mineral_list, name='index'),
 ]
+
+urlpatterns += staticfiles_urlpatterns()
