@@ -16,5 +16,11 @@ See `requirements.txt` for more details.
 ## Usage
 
 - clone the repo to your computer
+- You'll need to run the migration to create the database and populate the data.
+  - from the commandline, run:
+    ```bash
+    python3 manage.py makemigrations minerals
+    python3 manage.py migrate minerals
+    ```
 - from the root of that folder, run `python3 manage.py runserver`
 - In your browser, open `localhost` to see the site
