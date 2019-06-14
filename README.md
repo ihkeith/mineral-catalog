@@ -27,6 +27,7 @@ From the root of the cloned folder, run:
 python3 -m venv venv
 source venv/bin/activate
 pip install -r /path/to/requirements.txt
+```
 
 ### Run migrations
 
