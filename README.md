@@ -15,12 +15,32 @@ See `requirements.txt` for more details.
 
 ## Usage
 
-- clone the repo to your computer
-- You'll need to run the migration to create the database and populate the data.
-  - from the commandline, run:
-    ```bash
-    python3 manage.py makemigrations minerals
-    python3 manage.py migrate minerals
-    ```
-- from the root of that folder, run `python3 manage.py runserver`
-- In your browser, open `localhost` to see the site
+### Clone the repo to your computer
+
+`git clone https://github.com/ihkeith/mineral-catalog.git`
+
+### Create your virtual environment
+
+From the root of the cloned folder, run:
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+pip install -r /path/to/requirements.txt
+
+### Run migrations
+
+You'll need to run the migration to create the database and populate the data.
+
+From the commandline, run:
+
+```bash
+python3 manage.py makemigrations minerals
+python3 manage.py migrate minerals
+```
+
+### Run the Server
+
+From the root of that folder, run `python3 manage.py runserver`
+
+In your browser, open `localhost` to see the site
